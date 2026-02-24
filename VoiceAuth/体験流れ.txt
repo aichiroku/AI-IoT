@@ -1,0 +1,21 @@
+【必要なもの】
+イヤホン
+PC：Pythonインストール済み
+※python -m pip install resemblyzer sounddevice paho-mqttでライブラリインストール済み
+※エラーが出たらpipを最新版にし、Visual C++ Build Toolsをインストール
+https://qiita.com/ybsh2891/items/7c159a0ada13e43b4a75
+マイクのデフォルト入力がPC本体になってることを確認
+
+【手順】
+①サウンドレコーダーで自分の声を録音する⇐保存場所確認
+②python mypetctl.py実行し、本人確認できることを確認
+③認識系AIとMQTTプロトコルの仕組みについて軽く説明
+④本人確認できたら、の処理部分にパブリッシュする処理を入れる
+　　client.publish("iottaiken/mabee", "1,on")
+⑤該当のぬいぐるみ裏面のスイッチを入れて、音声で動作することを確認
+
+
+【TODO】
+リモコンで動くぬいぐるみ×10
+SwitchBotで動作確認
+IFTTTにWebhookでSwitchBotシーン動くレシピ追加
